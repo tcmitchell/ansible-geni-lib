@@ -1,2 +1,29 @@
 ---
 # tasks file for role-geni-lib
+- include_vars: "{{ item }}"
+  with_first_found:
+    # For Ubuntu-xenial, Ubuntu-trusty, etc.
+    - "../vars/{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml"
+    # For CentOS-7, CentOS-6, etc.
+    - "../vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "../vars/{{ ansible_os_family }}.yml"
+    - "../vars/default.yml"
+
+- name: install geni-lib dependencies
+  package:
+    name: "{{ genilib_packages }}"
+    state: latest
+
+- name: install latest pip
+  pip:
+    name: pip
+    state: latest
+
+- name: install geni-lib
+  pip:
+    name: hg+https://bitbucket.org/barnstorm/geni-lib@0.9-DEV#egg=geni-lib
+
+# Make sure an arbitrary geni-lib package can be imported as a
+# rudimentary test and sanity check
+- name: test geni-lib
+  command: python -c 'import geni.aggregate'

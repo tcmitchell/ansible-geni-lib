@@ -1,0 +1,17 @@
+---
+# role-geni-lib vars file for Ubuntu 16.04 (xenial)
+genilib_packages:
+  - mercurial
+  - build-essential
+  - python-setuptools
+  - libxml2-dev
+  - python-dev
+  - libxslt1-dev
+  - zlib1g-dev
+  - libffi-dev
+  - libssl-dev
+  - python-ipaddr
+  - python-requests
+  - python-lxml
+  - python-pip
+  - python-cryptography
