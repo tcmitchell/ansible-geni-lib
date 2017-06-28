@@ -9,6 +9,11 @@
     - "../vars/{{ ansible_os_family }}.yml"
     - "../vars/default.yml"
 
+- name: install geni-lib pre dependencies
+  package:
+    name: "{{ genilib_pre_deps }}"
+    state: latest
+
 - name: install geni-lib dependencies
   package:
     name: "{{ genilib_packages }}"
