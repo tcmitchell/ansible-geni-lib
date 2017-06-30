@@ -29,6 +29,10 @@ _Note: it might be a good idea to grab the Dockerfile for this image
 and capture it in the repository so that if the image is no longer
 available, it can be reconstructed._
 
+See https://github.com/CentOS/CentOS-Dockerfiles/tree/master/ssh/centos7
+for a Dockerfile to construct a CentOS 7 image with ssh. It's a lot
+simpler than the one in use now, and could be more repeatable this way.
+
 ```shell
 ansible-playbook geni-lib-centos7.yml
 ```
