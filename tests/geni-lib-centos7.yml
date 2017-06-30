@@ -12,7 +12,7 @@
 - name: Install geni-lib
   hosts: docker_containers
   roles:
-    - { role: role-geni-lib }
+    - { role: ansible-geni-lib }
   tasks:
     - name: Test echo
       command: 'echo "hello world"'

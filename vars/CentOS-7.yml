@@ -1,5 +1,5 @@
 ---
-# role-geni-lib vars file for Ubuntu 16.04 (xenial)
+# ansible-geni-lib vars file for Ubuntu 16.04 (xenial)
 genilib_pre_deps:
   - epel-release
 genilib_packages:

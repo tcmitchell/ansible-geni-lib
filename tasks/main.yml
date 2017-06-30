@@ -1,5 +1,5 @@
 ---
-# tasks file for role-geni-lib
+# tasks file for ansible-geni-lib
 - include_vars: "{{ item }}"
   with_first_found:
     # For Ubuntu-xenial, Ubuntu-trusty, etc.
